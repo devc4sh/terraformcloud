@@ -4,7 +4,7 @@ data "terraform_remote_state" "vpc" {
   config = {
     organization = "c4sh"
     workspaces = {
-      name = "vpc"
+      name = "terraformcloud"
     }
   }
 }

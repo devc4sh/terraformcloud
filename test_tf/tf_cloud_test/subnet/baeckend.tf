@@ -4,7 +4,7 @@ terraform {
     organization = "c4sh"
 
     workspaces {
-      name = "subnet"
+      name = "terraformcloud"
     }
   }
 }
