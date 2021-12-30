@@ -5,7 +5,7 @@ locals {
 }
 
 module "vpc" {
-  source     = "./modules/vpc"
+  source     = "@git/vpc"
   vpc_cidr   = local.vpc_cidr
   enable_igw = true
   tag        = local.tag

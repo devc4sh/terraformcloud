@@ -1,9 +1,9 @@
-terraform {
-  backend "remote" {
-    hostname     = "app.terraform.io"
-    organization = "c4sh"
+data "terraform_remote_state" "vpc" {
+  backend = "remote"
 
-    workspaces {
+  config = {
+    organization = "c4sh"
+    workspaces = {
       name = "vpc"
     }
   }

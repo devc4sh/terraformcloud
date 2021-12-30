@@ -1,6 +1,6 @@
 terraform {
   backend "remote" {
-    hostname     = "app.terraform.io"
+    hostname = "app.terraform.io"
     organization = "c4sh"
 
     workspaces {

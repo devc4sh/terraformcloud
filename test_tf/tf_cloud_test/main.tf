@@ -15,6 +15,7 @@ locals {
       dst_cidr = "0.0.0.0/0",
       dst_id   = module.vpc.igw_id
       rsc_type = "gw"
+
     },
 
     nlb = {
@@ -36,6 +37,14 @@ locals {
   }
 
   azs = ["${local.region}a", "${local.region}c"]
+}
+
+
+module "vpc" {
+  source     = "./modules/vpc"
+  vpc_cidr   = local.vpc_cidr
+  enable_igw = true
+  tag        = local.tag
 }
 
 module "subnets" {
@@ -64,7 +73,7 @@ module "nat" {
 }
 
 module "route" {
-  source   = ""
+  source   = "./modules/route"
   for_each = local.route_info
 
   rsc_cidr = each.value.dst_cidr
