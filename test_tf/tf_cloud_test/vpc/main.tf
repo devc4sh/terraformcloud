@@ -5,7 +5,7 @@ locals {
 }
 
 module "vpc" {
-  source     = "github.com:devc4sh/terraformcloud"
+  source     = "github.com/devc4sh/terraformcloud"
   vpc_cidr   = local.vpc_cidr
   enable_igw = true
   tag        = local.tag

@@ -39,7 +39,7 @@ locals {
 }
 
 module "subnets" {
-  source   = "github.com:devc4sh/terraformcloud"
+  source   = "github.com/devc4sh/terraformcloud"
   for_each = local.subnet_info
 
   vpc_id       = module.vpc.vpc_id
@@ -54,7 +54,7 @@ module "subnets" {
 }
 
 module "nat" {
-  source    = "github.com:devc4sh/terraformcloud"
+  source    = "github.com/devc4sh/terraformcloud"
   subnet_id = module.subnets["bastion"].subnet_ids[0]
   tag       = local.tag
 
@@ -64,7 +64,7 @@ module "nat" {
 }
 
 module "route" {
-  source   = "github.com:devc4sh/terraformcloud"
+  source   = "github.com/devc4sh/terraformcloud"
   for_each = local.route_info
 
   rsc_cidr = each.value.dst_cidr
