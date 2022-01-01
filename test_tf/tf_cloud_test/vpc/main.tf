@@ -1,5 +1,4 @@
 locals {
-  region   = "ap-northeast-2"
   vpc_cidr = "66.88.144.0/22"
   tag      = "TEST"
 }
